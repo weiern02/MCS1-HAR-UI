@@ -1,6 +1,4 @@
-# Setting Up Virtual Environment and Installing Required Packages
-
-This read me will help you set up a virtual environment for your Python project and install the required packages using `pip`.
+# Setting Up Virtual Environment, Installing Required Packages & Run the Application
 
 ## Step 1: Create a Virtual Environment
 
