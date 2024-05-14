@@ -1,0 +1,56 @@
+.navbar {
+    font-family: 'Trebuchet MS', sans-serif;
+    position: fixed;
+    width: 100%;
+    z-index: 99999999999999999999;
+    left: 0rem;
+    top: 0rem;
+    height: 10px;
+}
+
+.navitem {
+    float: left;
+    display: block;
+    text-align: center;
+    padding: 10px 20px; /* Adjusted padding-top value */
+    text-decoration: none !important;
+    font-size: 14px;
+    font-family: 'Trebuchet MS', sans-serif;
+    color: white; /* Default text color for light theme */
+}
+
+.navitem:hover {
+    background-color: #333;
+    height: 55px !important;
+}
+
+/* Dark theme specific styles */
+.navbar.dark {
+    background: #333;
+}
+
+.navbar.dark .navitem {
+    color: black; /* Text color for dark theme */
+}
+
+.version-span {
+    color: white;
+    position: absolute;
+    right: 1rem;
+    bottom: 1.75rem;
+    opacity: 0.5;
+    z-index: 9999;
+    border: 2px solid #333;
+    border-radius: 25px;
+    padding-right: 0.5rem;
+    padding-left: 0.5rem;
+    background: #333;
+}
+
+iframe {
+    height: 0rem;
+}
+
+.title-wrapper {
+    margin-top: -30px; /* Adjust as needed */
+}
