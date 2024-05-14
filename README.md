@@ -18,8 +18,10 @@ venv\Scripts\activate
 ## Step 3: Install Required Packages
 ```
 pip install -r requirements.txt
+python install.py
 ```
 Note: if facing pip version issue, try to run the following command and run Step 3 again: 
+Note: if python install.py facing package dependency error, try to run python install.py again:
 ```
 python.exe -m pip install --upgrade pip
 ```
@@ -28,4 +30,7 @@ python.exe -m pip install --upgrade pip
 streamlit run app.py
 ```
 
-## Step 5: App available at http://localhost:8051
+## Step 5: App Access 
+```
+http://localhost:8501
+```
