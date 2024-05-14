@@ -1,4 +1,7 @@
-# Setting Up Virtual Environment, Installing Required Packages and Run the App
+# Setting Up Virtual Environment and Installing Required Packages
+
+This read me will help you set up a virtual environment for your Python project and install the required packages using `pip`.
+
 ## Step 1: Create a Virtual Environment
 
 Run the following command to create a virtual environment named `venv`:
@@ -16,18 +19,13 @@ venv\Scripts\activate
 ```
 pip install -r requirements.txt
 ```
-
+Note: if facing pip version issue, try to run the following command and run Step 3 again: 
+```
+python.exe -m pip install --upgrade pip
+```
 ## Step 4: Run the streamlit program
 ```
-streamlit run app.y
+streamlit run app.py
 ```
 
-## Step 5: App Access
-```
- http://localhost:8051
-```
-
-## Additional Step: Check the csv
-```
-pytest test_csv.py 
-```
+## Step 5: App available at http://localhost:8051
