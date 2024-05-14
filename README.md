@@ -21,6 +21,7 @@ pip install -r requirements.txt
 python install.py
 ```
 Note: if facing pip version issue, try to run the following command and run Step 3 again: 
+
 Note: if python install.py facing package dependency error, try to run python install.py again:
 ```
 python.exe -m pip install --upgrade pip
