@@ -13,7 +13,7 @@ def inject_custom_css():
 
 def get_current_route():
     try:
-        return st.query_params['nav']
+        return st.experimental_get_query_params()['nav'][0]
     except:
         return None
 
@@ -28,4 +28,3 @@ def navbar_component():
             </nav>
             '''
     st.markdown(component, unsafe_allow_html=True)
-
