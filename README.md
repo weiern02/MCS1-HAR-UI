@@ -35,9 +35,9 @@ http://localhost:8501
 ```
 
 ## If you are facing python version not compatible at Step3:
-'''
+```
 py -3.9 -m pip install -r requirements.txt
 py -3.9 -m pip install streamlit==1.33.0
 py -3.9 -m pip install protobuf==3.20.0
 py -3.9 -m streamlit run app.py
-'''
+```
