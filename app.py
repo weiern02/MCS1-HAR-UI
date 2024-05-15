@@ -37,7 +37,7 @@ def main():
         if option == 'Front Only' or option == "Side Only":
 
             model = get_wavelet_cnn_model()
-            model.summary()
+            #model.summary()
             model.compile(optimizer="adam",loss="categorical_crossentropy",metrics=["accuracy"])
             if option == 'Front Only':
                 model.load_weights("all_front_lpf_dwt_256.h5")
@@ -69,7 +69,8 @@ def main():
                     predicted_class = activity_classes[predicted_class_index]
                     expected = alpha_only_string = re.sub(r'[^a-zA-Z]', '', file_path[:-4])
 
-                    st.write(f"<h5>Predicted Activity: <b>{predicted_class}</b> || Expected Activity: <b>{expected}</b></h5>", unsafe_allow_html=True)
+                    st.write(f"<h5>Predicted Activity: <b>{predicted_class}</b></h5>", unsafe_allow_html=True)
+                    st.write(f"<h5>Expected Activity: <b>{expected}</b></h5>", unsafe_allow_html=True)
                     if predicted_class!=expected:
                         st.write(f"<h4><font color='red'><b>Wrong Prediction</b></font></h4>", unsafe_allow_html=True)
                     else:
@@ -87,10 +88,10 @@ def main():
                     dis_table = st.table(df_transposed)
                     csv_to_ampltude_plot(file_path)
 
-                    st.write("Heatmap Plot")
-                    st.image(img_path)
-                    st.write("Amplitude Plot")
-                    st.image("amplitude.jpg")
+                    st.markdown("<h5 style='text-align: center;'>Heatmap Plot</h5>", unsafe_allow_html=True)
+                    st.image(img_path, use_column_width=True)
+                    st.markdown("<h5 style='text-align: center;'>Amplitude Plot</h5>", unsafe_allow_html=True)
+                    st.image("amplitude.jpg", use_column_width=True)
 
                     os.remove(img_path)
                     os.remove("amplitude.jpg")
@@ -131,8 +132,8 @@ def main():
                     predicted_class = activity_classes[predicted_class_index]
                     expected = re.sub(r'[^a-zA-Z]', '', file_path_front_name[:-4])[1:]
 
-                    st.write(f"<h5>Predicted Activity: <b>{predicted_class}</b> || Expected Activity: <b>{expected}</b></h5>", unsafe_allow_html=True)
-                    
+                    st.write(f"<h5>Predicted Activity: <b>{predicted_class}</b></h5>", unsafe_allow_html=True)
+                    st.write(f"<h5>Expected Activity: <b>{expected}</b></h5>", unsafe_allow_html=True)
                     if predicted_class!=expected:
                         st.write(f"<h4><font color='red'><b>Wrong Prediction</b></font></h4>", unsafe_allow_html=True)
                     else:
@@ -149,15 +150,15 @@ def main():
                     df_transposed.columns = new_header
                     dis_table = st.table(df_transposed)
                     
-                    st.write("Heatmap Plot")
-                    st.image(img_path)
+                    st.markdown("<h5 style='text-align: center;'>Heatmap Plot</h5>", unsafe_allow_html=True)
+                    st.image(img_path,use_column_width=True)
                     csv_to_ampltude_plot(file_path_front_name)
                     os.rename("amplitude.jpg", "front.jpg")
-                    st.write("Front Amplitude")
-                    st.image("front.jpg")
+                    st.markdown("<h5 style='text-align: center;'>Front Amplitude</h5>", unsafe_allow_html=True)
+                    st.image("front.jpg",use_column_width=True)
                     csv_to_ampltude_plot(file_path_side_name)
-                    st.write("Side Amplitude")
-                    st.image("amplitude.jpg")
+                    st.markdown("<h5 style='text-align: center;'>Side Amplitude</h5>", unsafe_allow_html=True)
+                    st.image("amplitude.jpg",use_column_width=True)
 
                     os.remove("front.jpg")
                     os.remove("amplitude.jpg")
@@ -168,8 +169,6 @@ def main():
                     st.write("<span style='color:red'>Mac Address should be different or Label should be same!</span>", unsafe_allow_html=True)
                     os.remove(file_path_front_name)
                     os.remove(file_path_side_name)
-
-
 
     elif page_selection == "Project Overview":
         """#### Enviromental Setup"""
