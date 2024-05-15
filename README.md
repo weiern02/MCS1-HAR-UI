@@ -13,6 +13,15 @@ python -m venv venv
 venv\Scripts\activate
 ```
 
+## If your python version is not 3.9.13, run the following command and IGNORE Step 3 and proceed to Step 4 after this:
+Please go to your Microsoft Store to install Python 3.9 (this will not affect your original python version as this is runned inside the virtual environment)
+```
+py -3.9 -m pip install -r requirements.txt
+py -3.9 -m pip install streamlit==1.33.0
+py -3.9 -m pip install protobuf==3.20.0
+py -3.9 -m streamlit run app.py
+```
+
 ## Step 3: Install Required Packages
 ```
 pip install -r requirements.txt
@@ -24,6 +33,7 @@ Note: if python install.py facing package dependency error, try to run python in
 ```
 python.exe -m pip install --upgrade pip
 ```
+
 ## Step 4: Run the streamlit program
 ```
 streamlit run app.py
@@ -34,10 +44,4 @@ streamlit run app.py
 http://localhost:8501
 ```
 
-## If you are facing python version not compatible at Step3:
-```
-py -3.9 -m pip install -r requirements.txt
-py -3.9 -m pip install streamlit==1.33.0
-py -3.9 -m pip install protobuf==3.20.0
-py -3.9 -m streamlit run app.py
-```
+
